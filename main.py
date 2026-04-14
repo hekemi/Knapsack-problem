@@ -1,15 +1,19 @@
 from utils import *
 from solver import *
-import time
+import time, heapq
 
 w = 1 # Емкость рюкзака
 
 n = int(input("Введите количество предметов>>"))
 x = int(input("Введите максимальную стоимость предмета>>"))
 
+
 # Списки-словари для равномерного и нормального распределений
 itemsUniform = uniform_distribution(n, x)
 itemsNormal = normal_distribution(n, x)
+items = normal_distribution(n, x)
+    
+        
 
 '''choiseVar = input()
 
