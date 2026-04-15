@@ -101,7 +101,8 @@ class MainWindow(QMainWindow):
     def solve_task(self):
         try:
             from utils import uniform_distribution, normal_distribution
-            from solver import branch_boundary_method, greedy_algo
+            from solver import greedy_algo
+            from stick_n_rope import stick_n_rope as branch_boundary_method
 
             n = int(self.edit_n.text())
             x = int(self.edit_max_price.text())
