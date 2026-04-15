@@ -3,16 +3,38 @@ from solver import *
 from stick_n_rope import *
 import time
 
-w = 1 # Емкость рюкзака
+import sys
+from PyQt5.QtWidgets import QApplication
+from visualizer import MainWindow 
 
+def main():
+    # Создаем экземпляр приложения PyQt5
+    app = QApplication(sys.argv)
+    
+    # Создаем и показываем главное окно
+    window = MainWindow()
+    window.show()
+    
+    # Запускаем цикл обработки событий
+    sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()
+
+#w = 1 - Емкость рюкзака
+'''
 n = int(input("Введите количество предметов>>"))
 x = int(input("Введите максимальную стоимость предмета>>"))
+
 
 # Списки-словари для равномерного и нормального распределений
 itemsUniform = uniform_distribution(n, x)
 itemsNormal = normal_distribution(n, x)
 
-'''choiseVar = input()
+#items = normal_distribution(n, x)
+        
+
+choiseVar = input()
 
 textVar = {
     "1": "равномерного",
@@ -21,12 +43,12 @@ textVar = {
 var = {
     "1": itemsUniform,
     "2": itemsNormal
-}'''
+}
 
 #print(f"Равномерное распределение {itemsUniform}")
 #print(f"Нормальное распределение {itemsNormal}")
 
-#Жадный для равномерного
+# Жадный для равномерного
 start = time.perf_counter()
 sorted_items, total_v, total_cost = greedy_algo(itemsUniform, w)
 end = time.perf_counter()
@@ -37,7 +59,7 @@ print(f"Итоговая стоимость: {total_cost}\n")
 print(f"Выполнено за: {end - start:.8f} сек.")
 
 
-#Жадный для нормального
+# Жадный для нормального
 start = time.perf_counter()
 sorted_items, total_v, total_cost = greedy_algo(itemsNormal, w)
 end = time.perf_counter()
