@@ -21,7 +21,7 @@ def print_result(title, items, capacity):
 if __name__ == "__main__":
     n = 20          # Количество предметов
     max_price = 100 # Верхняя граница цены (для utils.items_cost)
-    capacity = 3.5  # Вместимость рюкзака
+    capacity = 1  # Вместимость рюкзака
 
     # Набор с равномерным распределением весов
     items_uniform = uniform_distribution(n, max_price)
