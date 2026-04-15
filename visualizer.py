@@ -14,31 +14,91 @@ class MainWindow(QMainWindow):
         self.results_storage = {}
 
         self.setStyleSheet("""
-            QMainWindow { background-color: #121212; }
-            QLabel { color: #BBBBBB; font-size: 14pt; font-weight: bold; }
+            QMainWindow { 
+                background-color: #090D18; 
+            }
+
+            QLabel { 
+                color: #7DF9FF; 
+                font-size: 14pt; 
+                font-weight: bold; 
+            }
+
             QLineEdit, QComboBox { 
-                background-color: #1E1E1E; color: #FFFFFF; 
-                border: 1px solid #444; padding: 5px; 
-                border-radius: 4px; font-size: 14pt;
+                background-color: #10182B; 
+                color: #EAF6FF; 
+                border: 1px solid #00E5FF; 
+                padding: 6px; 
+                border-radius: 6px; 
+                font-size: 13pt;
             }
-            QComboBox QAbstractItemView { /*ЭТО НАСТРОЙКИ ИМЕННО ЭЛЕМЕНТОВ ВЫПАДАЮЩЕГО СПИСКА*/
-                background-color: #252526;       /* Фон всего списка */
-                color: #BBBBBB;                  /* Цвет текста элементов */
-                selection-background-color: #3A8DFF; /* Цвет фона при наведении (выборе) */
-                selection-color: #FFFFFF;        /* Цвет текста при наведении */
-                border: 1px solid #3A8DFF;       /* Рамка вокруг выпадающего списка */
+            QLineEdit:focus, QComboBox:focus {
+                border: 2px solid #FCEE0A;
             }
-            QCheckBox { color: #FFFFFF; font-size: 13pt; }
+
+            QComboBox::drop-down {
+                border: none;
+                width: 24px;
+            }
+
+            QComboBox QAbstractItemView {
+                background-color: #121A2F;
+                color: #BDEBFF;
+                selection-background-color: #00E5FF;
+                selection-color: #081018;
+                border: 1px solid #FCEE0A;
+                outline: 0;
+            }
+
+            QCheckBox { 
+                color: #EAF6FF; 
+                font-size: 13pt; 
+                spacing: 10px;
+            }
+            QCheckBox::indicator {
+                width: 20px;
+                height: 20px;
+                border: 2px solid #00E5FF;
+                border-radius: 4px;
+                background-color: #0E1424;
+            }
+            QCheckBox::indicator:hover {
+                border: 2px solid #FCEE0A;
+            }
+            QCheckBox::indicator:checked {
+                background-color: #FCEE0A;
+                border: 2px solid #00FFD1;
+            }
+
             QTextEdit { 
-                background-color: #181818; color: #00FF00; 
-                font-family: 'Consolas', 'Monaco', monospace;
-                font-size: 13pt; border: 2px solid #3A8DFF; 
-                border-radius: 8px; padding: 10px;
+                background-color: #0A1020; 
+                color: #FCEE0A; 
+                font-family: 'Consolas', 'JetBrains Mono', monospace;
+                font-size: 12.5pt; 
+                border: 2px solid #00E5FF; 
+                border-radius: 8px; 
+                padding: 10px;
+                selection-background-color: #FCEE0A;
+                selection-color: #000000;
             }
+
             QPushButton { 
-                background-color: #3A8DFF; color: white; 
-                font-size: 13pt; font-weight: bold; 
-                border-radius: 5px; padding: 10px 25px; 
+                background-color: #00E5FF; 
+                color: #081018; 
+                font-size: 13pt; 
+                font-weight: bold; 
+                border: 1px solid #FCEE0A;
+                border-radius: 6px; 
+                padding: 10px 22px; 
+            }
+            QPushButton:hover {
+                background-color: #FCEE0A;
+                color: #000000;
+                border: 1px solid #00E5FF;
+            }
+            QPushButton:pressed {
+                background-color: #FFD400;
+                color: #000000;
             }
         """)
 
