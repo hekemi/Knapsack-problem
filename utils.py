@@ -12,7 +12,7 @@ def uniform_distribution(n, x):
 def normal_distribution(n, x):
     weight_cost = []
     mat_expectation = 0.5
-    std_dev = 0.4
+    std_dev = 2
     while len(weight_cost) < n:
         weightN = random.gauss(mat_expectation, std_dev)
         if 0 < weightN < 1:
